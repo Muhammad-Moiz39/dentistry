@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duozhuamiao — High-quality and painless dentistry</title>
+  <meta name="description" content="We offer a full range of services and an integrated approach to solving any problems, guaranteeing healthy teeth and oral cavity for the whole family." />
+
+  <!-- Google Fonts: Manrope (matches Figma design) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header__inner">
+      <a href="#" class="logo">Duozhuamiao</a>
+
+      <nav class="nav" id="primary-nav">
+        <ul class="nav__list">
+          <li><a href="#about" class="nav__link">About us</a></li>
+          <li><a href="#services" class="nav__link">Services</a></li>
+          <li><a href="#doctors" class="nav__link">Doctors</a></li>
+          <li><a href="#testimonials" class="nav__link">Testimonials</a></li>
+          <li><a href="#contacts" class="nav__link">Contacts</a></li>
+        </ul>
+      </nav>
+
+      <a href="#appointment" class="btn btn--outline header__cta">Make Appointment</a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__inner">
+
+        <div class="hero__content">
+          <h1 class="hero__title">
+            High-quality and painless <span class="text-accent">dentistry</span>
+          </h1>
+          <p class="hero__text">
+            We offer a full range of services and an integrated approach to solving any problems,
+            and this is a guarantee of healthy teeth and oral cavity for all family members.
+          </p>
+          <a href="#appointment" class="btn btn--solid" id="hero-cta">Make Appointment</a>
+        </div>
+
+        <div class="hero__gallery" aria-hidden="false">
+          <div class="hero__gallery-col">
+            <div class="hero__gallery-row">
+              <div class="hero__shape-group">
+                <span class="hero__dot"></span>
+                <span class="hero__pill"></span>
+              </div>
+              <div class="hero__img hero__img--sm">
+                <img src="assets/doctor.png" alt="Doctor holding a heart-shaped stethoscope decoration" loading="lazy" />
+              </div>
+            </div>
+            <div class="hero__img hero__img--wide">
+              <img src="assets/hero-wide.png" alt="Close-up of a patient receiving care" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="hero__img hero__img--tall">
+            <img src="assets/hero-tall.webp" alt="Surgical team performing a procedure in an operating room" loading="lazy" />
+          </div>
+        </div>
+</div>
+    <section class="about" id="about">
+      <div class="container about__inner">
+ 
+        <div class="about__gallery">
+          <div class="about__gallery-col">
+            <div class="about__gallery-row">
+              <div class="about__img about__img--wide">
+                <img src="assets/about-doctor.png" alt="Doctor smiling with a patient during a consultation" loading="lazy" />
+              </div>
+              <span class="about__dot"></span>
+            </div>
+            <div class="about__img about__img--tall">
+              <img src="assets/about-hands.png" alt="Parent holding a newborn's hand" loading="lazy" />
+            </div>
+          </div>
+        </div>
+ 
+        <div class="about__content">
+          <p class="eyebrow">About us</p>
+          <h2 class="about__title">Patient health is the highest value in our work</h2>
+          <p class="about__text">
+            The latest equipment, high-precision digital technologies and the best achievements of
+            modern world medicine have allowed us to create a completely new, unprecedented level of
+            painlessness, safety and comfort for patients.
+          </p>
+          <div class="about__cta">
+            <a href="#services" class="btn btn--solid">Learn More</a>
+            <button class="play-btn" id="play-video" aria-label="Play video">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 2.5L13 8L4 13.5V2.5Z" fill="#3167d9" />
+              </svg>
+            </button>
+          </div>
+        </div>
+ 
+      </div>
+    </section>
+ <section class="services" id="services">
+      <div class="container services__inner">
+        <div class="services__heading">
+          <p class="eyebrow">Services</p>
+          <h2 class="services__title">High quality services for you</h2>
+        </div>
+ 
+        <div class="services__grid" id="services-grid">
+      <!-- Card 1 -->
+      <article class="service-card">
+        <div class="service-card__icon">
+          <!-- Medical kit icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="7" width="18" height="13" rx="2"></rect>
+            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
+            <line x1="12" y1="12" x2="12" y2="12.01"></line>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Implant dentistry</h3>
+        <p class="service-card__description">
+          Full restoration of the chewing function and aesthetics of patient's smile,regardless of his age,in any clinical situation.
+        </p>
+        <a href="#" class="service-card__link">Read more</a>
+      </article>
+      <!-- Card 2 -->
+      <article class="service-card">
+        <div class="service-card__icon">
+          <!-- Monitor / screen icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Surgery dentistry</h3>
+        <p class="service-card__description">
+          Full restoration of the chewing function and aesthetics of patient's smile,regardless of his age,in any clinical situation.
+        </p>
+        <a href="#" class="service-card__link">Read more</a>
+      </article>
+      <!-- Card 3 -->
+      <article class="service-card">
+        <div class="service-card__icon">
+          <!-- Dental light / bowl icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="4" r="2"></circle>
+            <path d="M12 6v3"></path>
+            <path d="M5 14h14a7 7 0 0 1-14 0z"></path>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Dental treatment</h3>
+        <p class="service-card__description">
+          Full restoration of the chewing function and aesthetics of patient's smile,regardless of his age,in any clinical situation.
+        </p>
+        <a href="#" class="service-card__link">Read more</a>
+      </article>
+      <!-- Card 4 -->
+      <article class="service-card">
+        <div class="service-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="7" width="18" height="13" rx="2"></rect>
+            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
+            <line x1="12" y1="12" x2="12" y2="12.01"></line>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Implant dentistry</h3>
+        <p class="service-card__description">
+          Full restoration of the chewing function and aesthetics of patient's smile,regardless of his age,in any clinical situation.
+        </p>
+        <a href="#" class="service-card__link">Read more</a>
+      </article>
+      <!-- Card 5 -->
+      <article class="service-card">
+        <div class="service-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Surgery dentistry</h3>
+        <p class="service-card__description">
+          Full restoration of the chewing function and aesthetics of patient's smile,regardless of his age,in any clinical situation.
+        </p>
+        <a href="#" class="service-card__link">Read more</a>
+      </article>
+      <!-- Card 6 -->
+      <article class="service-card">
+        <div class="service-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="4" r="2"></circle>
+            <path d="M12 6v3"></path>
+            <path d="M5 14h14a7 7 0 0 1-14 0z"></path>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Dental treatment</h3>
+        <p class="service-card__description">
+          Full restoration of the chewing function and aesthetics of patient's smile,regardless of his age,in any clinical situation.
+        </p>
+        <a href="#" class="service-card__link">Read more</a>
+      </article>
+    </div>
+  </div>
+        
+    </section>
+     <section class="appointment-banner" id="appointment">
+      <div class="container appointment-banner__inner">
+ 
+        <div class="appointment-banner__content">
+          <p class="eyebrow eyebrow--light">About us</p>
+          <h2 class="appointment-banner__title">Make an Appointment</h2>
+          <p class="appointment-banner__text">
+            The latest equipment, high-precision digital technologies and the best achievements of
+            modern world medicine have allowed us to create a completely new, unprecedented level of
+            painlessness, safety and comfort for patients.
+          </p>
+          <form class="appointment-form" id="appointment-form" novalidate>
+            <button type="submit" class="btn btn--light">Make Appointment</button>
+          </form>
+        </div>
+ 
+        <div class="appointment-banner__gallery">
+          <div class="appointment-banner__col">
+            <span class="appointment-banner__dot"></span>
+            <div class="appointment-banner__img appointment-banner__img--wide">
+              <img src="assets/banner-wide.png" alt="Doctor holding examination equipment" loading="lazy" />
+            </div>
+          </div>
+          <div class="appointment-banner__img appointment-banner__img--tall">
+            <img src="assets/banner-tall.png" alt="Parent and child holding hands" loading="lazy" />
+          </div>
+        </div>
+ 
+      </div>
+    </section>
+
+     <section class="dentists-section">
+    <div class="slider-container">
+      
+      <!-- Header with Title & Navigation Controls -->
+      <div class="section-header">
+        <div class="header-text">
+          <span class="category-badge">DOCTORS</span>
+          <h2 class="section-title">Meet our qualified dentists</h2>
+        </div>
+        <div class="slider-navigation">
+          <button class="nav-btn prev-btn" id="prevBtn" aria-label="Previous Slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button class="nav-btn next-btn" id="nextBtn" aria-label="Next Slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Slider Track -->
+      <div class="slider-wrapper">
+        <div class="slider-track" id="sliderTrack">
+          
+          <!-- Card 1 -->
+          <article class="doctor-card">
+            <div class="image-box">
+              <img src="assets/darrell.png" alt="Darrell Steward" loading="lazy" />
+            </div>
+            <div class="card-details">
+              <h3 class="doctor-name">Darrell Steward</h3>
+              <p class="doctor-role">Implant surgeon</p>
+            </div>
+          </article>
+          <!-- Card 2 -->
+          <article class="doctor-card">
+            <div class="image-box">
+              <img src="assets/jacob.png" alt="Jacob Jones" loading="lazy" />
+            </div>
+            <div class="card-details">
+              <h3 class="doctor-name">Jacob Jones</h3>
+              <p class="doctor-role">Implant surgeon</p>
+            </div>
+          </article>
+          <!-- Card 3 -->
+          <article class="doctor-card">
+            <div class="image-box">
+              <img src="assets/jane.png" alt="Jane Cooper" loading="lazy" />
+            </div>
+            <div class="card-details">
+              <h3 class="doctor-name">Jane Cooper</h3>
+              <p class="doctor-role">Implant surgeon</p>
+            </div>
+          </article>
+          <!-- Card 4 -->
+          <article class="doctor-card">
+            <div class="image-box">
+              <img src="assets/kristin.png" alt="Kristin Watson" loading="lazy" />
+            </div>
+            <div class="card-details">
+              <h3 class="doctor-name">Kristin Watson</h3>
+              <p class="doctor-role">Implant surgeon</p>
+            </div>
+          </article>
+          <!-- Card 5 -->
+          <article class="doctor-card">
+            <div class="image-box">
+              <img src="assets/ronald.png" alt="Ronald Richards" loading="lazy" />
+            </div>
+            <div class="card-details">
+              <h3 class="doctor-name">Ronald Richards</h3>
+              <p class="doctor-role">Implant surgeon</p>
+            </div>
+          </article>
+          <!-- Card 6 -->
+          <article class="doctor-card">
+            <div class="image-box">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Cody Fisher" loading="lazy" />
+            </div>
+            <div class="card-details">
+              <h3 class="doctor-name">Cody Fisher</h3>
+              <p class="doctor-role">Orthodontist</p>
+            </div>
+          </article>
+          <!-- Card 7 -->
+          <article class="doctor-card">
+            <div class="image-box">
+              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Arlene McCoy" loading="lazy" />
+            </div>
+            <div class="card-details">
+              <h3 class="doctor-name">Arlene McCoy</h3>
+              <p class="doctor-role">Periodontist</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
