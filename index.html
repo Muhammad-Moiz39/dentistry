@@ -12,6 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
 <body>
 
@@ -113,7 +115,7 @@
       </div>
     </section>
  <section class="services" id="services">
-      <div class="container services__inner">
+      <div class="container">
         <div class="services__heading">
           <p class="eyebrow">Services</p>
           <h2 class="services__title">High quality services for you</h2>
@@ -248,109 +250,330 @@
       </div>
     </section>
 
-     <section class="dentists-section">
-    <div class="slider-container">
-      
-      <!-- Header with Title & Navigation Controls -->
-      <div class="section-header">
-        <div class="header-text">
-          <span class="category-badge">DOCTORS</span>
-          <h2 class="section-title">Meet our qualified dentists</h2>
-        </div>
-        <div class="slider-navigation">
-          <button class="nav-btn prev-btn" id="prevBtn" aria-label="Previous Slide">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-          </button>
-          <button class="nav-btn next-btn" id="nextBtn" aria-label="Next Slide">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <!-- Slider Track -->
-      <div class="slider-wrapper">
-        <div class="slider-track" id="sliderTrack">
-          
-          <!-- Card 1 -->
-          <article class="doctor-card">
-            <div class="image-box">
-              <img src="assets/darrell.png" alt="Darrell Steward" loading="lazy" />
-            </div>
-            <div class="card-details">
-              <h3 class="doctor-name">Darrell Steward</h3>
-              <p class="doctor-role">Implant surgeon</p>
-            </div>
-          </article>
-          <!-- Card 2 -->
-          <article class="doctor-card">
-            <div class="image-box">
-              <img src="assets/jacob.png" alt="Jacob Jones" loading="lazy" />
-            </div>
-            <div class="card-details">
-              <h3 class="doctor-name">Jacob Jones</h3>
-              <p class="doctor-role">Implant surgeon</p>
-            </div>
-          </article>
-          <!-- Card 3 -->
-          <article class="doctor-card">
-            <div class="image-box">
-              <img src="assets/jane.png" alt="Jane Cooper" loading="lazy" />
-            </div>
-            <div class="card-details">
-              <h3 class="doctor-name">Jane Cooper</h3>
-              <p class="doctor-role">Implant surgeon</p>
-            </div>
-          </article>
-          <!-- Card 4 -->
-          <article class="doctor-card">
-            <div class="image-box">
-              <img src="assets/kristin.png" alt="Kristin Watson" loading="lazy" />
-            </div>
-            <div class="card-details">
-              <h3 class="doctor-name">Kristin Watson</h3>
-              <p class="doctor-role">Implant surgeon</p>
-            </div>
-          </article>
-          <!-- Card 5 -->
-          <article class="doctor-card">
-            <div class="image-box">
-              <img src="assets/ronald.png" alt="Ronald Richards" loading="lazy" />
-            </div>
-            <div class="card-details">
-              <h3 class="doctor-name">Ronald Richards</h3>
-              <p class="doctor-role">Implant surgeon</p>
-            </div>
-          </article>
-          <!-- Card 6 -->
-          <article class="doctor-card">
-            <div class="image-box">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Cody Fisher" loading="lazy" />
-            </div>
-            <div class="card-details">
-              <h3 class="doctor-name">Cody Fisher</h3>
-              <p class="doctor-role">Orthodontist</p>
-            </div>
-          </article>
-          <!-- Card 7 -->
-          <article class="doctor-card">
-            <div class="image-box">
-              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Arlene McCoy" loading="lazy" />
-            </div>
-            <div class="card-details">
-              <h3 class="doctor-name">Arlene McCoy</h3>
-              <p class="doctor-role">Periodontist</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
+   <section class="dentists-section" id="doctors">
+    <div class="container">
 
+        <div class="section-header">
+            <div>
+                <span class="eyebrow">OUR DENTISTS</span>
+                <h2>Meet our qualified dentists</h2>
+            </div>
+
+            <div class="slider-buttons">
+                <button class="dentist-prev" id="dentist-prev" aria-label="Previous dentist">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="19" y1="12" x2="5" y2="12"></line>
+                      <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </button>
+
+                <button class="dentist-next" id="dentist-next" aria-label="Next dentist">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Slider -->
+        <div class="swiper dentist-slider">
+            <div class="swiper-wrapper">
+                <!-- Card 1 -->
+                <div class="swiper-slide dentist-card">
+                    <img src="assets/darrell.png" alt="Dr. Darrell Steward">
+                    <div class="dentist-info">
+                        <h3>Dr. Darrell Steward</h3>
+                        <p>Orthodontist Specialist</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="swiper-slide dentist-card">
+                    <img src="assets/jacob.png" alt="Dr. Jacob Jones">
+                    <div class="dentist-info">
+                        <h3>Dr. Jacob Jones</h3>
+                        <p>Pediatric Dentist</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="swiper-slide dentist-card">
+                    <img src="assets/jane.png" alt="Dr. Jane Cooper">
+                    <div class="dentist-info">
+                        <h3>Dr. Jane Cooper</h3>
+                        <p>Dental Surgeon & Periodontist</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="swiper-slide dentist-card">
+                    <img src="assets/kristin.png" alt="Dr. Kristin Watson">
+                    <div class="dentist-info">
+                        <h3>Dr. Kristin Watson</h3>
+                        <p>Cosmetic & Prosthodontist</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="swiper-slide dentist-card">
+                    <img src="assets/ronald.png" alt="Dr. Ronald Richards">
+                    <div class="dentist-info">
+                        <h3>Dr. Ronald Richards</h3>
+                        <p>Implant Specialist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+  <section class="testimonials" id="testimonials">
+      <div class="container testimonials__inner">
+ 
+        <div class="testimonials__gallery" aria-label="Interactive patient reviews">
+          <span class="testimonials__shape testimonials__shape--pill-blue" style="--l:0%; --t:41.63%; --w:27.37%; --h:58.37%;"></span>
+          <span class="testimonials__shape testimonials__shape--pill-teal" style="--l:31.02%; --t:78.37%; --w:27.37%; --h:21.63%;"></span>
+          <button type="button" class="testimonials__shape testimonials__shape--circle avatar-btn is-active" data-index="0" style="--l:31.02%; --t:31.22%; --w:24.09%; --h:26.94%;" aria-label="Patient review from Courtney Henry">
+            <img src="assets/center.png" alt="Courtney Henry" loading="lazy" />
+          </button>
+          <button type="button" class="testimonials__shape testimonials__shape--circle avatar-btn" data-index="1" style="--l:55.11%; --t:9.39%; --w:19.53%; --h:21.84%;" aria-label="Patient review from Emily Clark">
+            <img src="assets/patient-2.png" alt="Emily Clark" loading="lazy" />
+          </button>
+          <button type="button" class="testimonials__shape testimonials__shape--circle avatar-btn" data-index="2" style="--l:16.42%; --t:9.80%; --w:14.60%; --h:16.33%;" aria-label="Patient review from Sofia Rodriguez">
+            <img src="assets/patient-1.png" alt="Sofia Rodriguez" loading="lazy" />
+          </button>
+          <button type="button" class="testimonials__shape testimonials__shape--circle avatar-btn" data-index="3" style="--l:79.38%; --t:33.47%; --w:14.60%; --h:16.33%;" aria-label="Patient review from Mia Chen">
+            <img src="assets/patient-3.png" alt="Mia Chen" loading="lazy" />
+          </button>
+          <button type="button" class="testimonials__shape testimonials__shape--circle avatar-btn" data-index="4" style="--l:62.04%; --t:58.16%; --w:14.60%; --h:16.33%;" aria-label="Patient review from Alisha Vance">
+            <img src="assets/patient-4.png" alt="Alisha Vance" loading="lazy" />
+          </button>
+        </div>
+ 
+        <div class="testimonials__content">
+          <p class="eyebrow">TESTIMONIALS</p>
+          <h2 class="testimonials__title">Check what our patients say about us</h2>
+ 
+          <blockquote class="testimonial-card" id="testimonial-card">
+            <span class="testimonial-card__quote" aria-hidden="true">&ldquo;</span>
+            <p class="testimonial-card__text" id="testimonial-text">
+              The latest equipment, high-precision digital technologies and the best achievements of
+              modern world medicine have allowed us to create a completely new, unprecedented level of
+              painlessness, safety and comfort for patients.
+            </p>
+            <footer class="testimonial-card__author">
+              <img class="testimonial-card__avatar" id="testimonial-avatar" src="assets/center.png" alt="Courtney Henry" loading="lazy" />
+              <div>
+                <cite class="testimonial-card__name" id="testimonial-author">Courtney Henry</cite>
+                <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+ 
+      </div>
+    </section>
+ 
+    <!-- Consultation / Callback Request Banner -->
+    <section class="contact-banner" id="consultation">
+      <div class="container contact-banner__inner">
+ 
+        <div class="contact-banner__gallery">
+          <div class="contact-banner__img contact-banner__img--tall">
+            <img src="assets/dentalassistant.png" alt="Dental assistant examining x-ray" loading="lazy" />
+          </div>
+          <div class="contact-banner__col">
+            <div class="contact-banner__row">
+              <div class="contact-banner__img contact-banner__img--sm">
+                <img src="assets/toy.png" alt="Child dental friendly teddy bear" loading="lazy" />
+              </div>
+              <span class="contact-banner__dot"></span>
+            </div>
+            <div class="contact-banner__img contact-banner__img--wide">
+              <img src="assets/surgical-tam.png" alt="Surgical dental team in an operating room" loading="lazy" />
+            </div>
+          </div>
+        </div>
+ 
+        <div class="contact-banner__content">
+          <h2 class="contact-banner__title">Are you still not sure?</h2>
+          <p class="contact-banner__text">
+            Our administrator will select for you convenient schedule of visits and create a record for dentist.
+          </p>
+ 
+          <form class="contact-form" id="consultation-form" novalidate>
+            <div class="contact-form__field">
+              <input type="text" id="contact-name" name="name" placeholder="Enter your name" autocomplete="name" required />
+              <span class="contact-form__error" id="contact-name-error"></span>
+            </div>
+            <div class="contact-form__field">
+              <input type="tel" id="contact-phone" name="phone" placeholder="Enter your number" autocomplete="tel" required />
+              <span class="contact-form__error" id="contact-phone-error"></span>
+            </div>
+            <button type="submit" class="btn btn--light contact-form__submit">Make Appointment</button>
+            <p class="contact-form__success" id="contact-form-success" role="status"></p>
+          </form>
+        </div>
+ 
+      </div>
+    </section>
+
+    <!-- Contacts & Dynamic User Location Map Section -->
+    <section class="contacts-section" id="contacts">
+      <div class="container">
+      
+        
+
+        <div class="contacts-wrapper">
+          <!-- Interactive Map Container (Centered on User's Location) -->
+          <div id="map" class="contacts-map" role="region" aria-label="Interactive Map of Clinic Locations"></div>
+
+          <!-- Floating Modern Blue Contacts Card -->
+          <div class="contacts-card">
+            <h3 class="contacts-card__title">Contacts</h3>
+            
+            <div class="contacts-card__list">
+              <div class="contacts-card__item">
+                <div class="contacts-card__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="contacts-card__detail">
+                  <span class="contacts-card__label">Clinic Location</span>
+                  <strong class="contacts-card__value" id="user-location-text">Detecting your location...</strong>
+                  <small class="contacts-card__sub" id="user-location-sub">Nearest branch automatically detected</small>
+                </div>
+              </div>
+
+              <div class="contacts-card__item">
+                <div class="contacts-card__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div class="contacts-card__detail">
+                  <span class="contacts-card__label">Direct Phone</span>
+                  <a href="tel:+18005550199" class="contacts-card__value contacts-card__link">+1 (800) 555-0199</a>
+                  <small class="contacts-card__sub">Mon-Sat: 8:00 AM – 8:00 PM</small>
+                </div>
+              </div>
+
+              <div class="contacts-card__item">
+                <div class="contacts-card__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </div>
+                <div class="contacts-card__detail">
+                  <span class="contacts-card__label">Email</span>
+                  <a href="mailto:care@duozhuamiao-dental.com" class="contacts-card__value contacts-card__link">care@duozhuamiao-dental.com</a>
+                  <small class="contacts-card__sub">Online consultations & support</small>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn--light contacts-card__btn" id="btn-recenter-location">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              Locate On Map
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <script src="js/script.js"></script>
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="logo footer__logo">Duozhuamiao</a>
+   
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer Navigation">
+        <ul class="footer__list">
+          <li><a href="#about" class="footer__link">About us</a></li>
+          <li><a href="#services" class="footer__link">Services</a></li>
+          <li><a href="#doctors" class="footer__link">Doctors</a></li>
+          <li><a href="#testimonials" class="footer__link">Testimonials</a></li>
+          <li><a href="#contacts" class="footer__link">Contacts</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__cta">
+        <a href="#appointment" class="btn btn--outline footer__btn">Make Appointment</a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p class="footer__copy">&copy; 2026 Duozhuamiao Dental Clinic. All rights reserved.</p>
+      <div class="footer__legal">
+        <a href="#" class="footer__legal-link">Privacy Policy</a>
+        <a href="#" class="footer__legal-link">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Video Modal -->
+  <div class="modal" id="video-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal__overlay" id="video-modal-overlay"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="video-modal-close" aria-label="Close video">&times;</button>
+      <div class="modal__video-wrap">
+        <iframe id="video-iframe" src="" title="Dental Clinic Tour" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Appointment Booking Modal -->
+  <div class="modal" id="appointment-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal__overlay" id="appointment-modal-overlay"></div>
+    <div class="modal__content modal__content--form">
+      <button class="modal__close" id="appointment-modal-close" aria-label="Close booking modal">&times;</button>
+      <h3 class="modal__title">Make an Appointment</h3>
+      <p class="modal__subtitle">Select your preferred date and service, and our clinic specialist will confirm your visit.</p>
+      <form class="modal__form" id="booking-modal-form">
+        <div class="modal__field">
+          <label for="modal-name">Your Full Name</label>
+          <input type="text" id="modal-name" required placeholder="Enter your name" />
+        </div>
+        <div class="modal__field">
+          <label for="modal-phone">Phone Number</label>
+          <input type="tel" id="modal-phone" required placeholder="Enter your phone number" />
+        </div>
+        <div class="modal__field">
+          <label for="modal-service">Service Needed</label>
+          <select id="modal-service">
+            <option value="General Checkup">General Consultation & Checkup</option>
+            <option value="Implant dentistry">Implant dentistry</option>
+            <option value="Surgery dentistry">Surgery dentistry</option>
+            <option value="Dental treatment">Dental treatment</option>
+            <option value="Orthodontics">Orthodontics & Braces</option>
+          </select>
+        </div>
+        <div class="modal__field">
+          <label for="modal-date">Preferred Date</label>
+          <input type="date" id="modal-date" required />
+        </div>
+        <button type="submit" class="btn btn--solid modal__submit">Confirm Appointment</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/custom.js"></script>
 </body>
 </html>
